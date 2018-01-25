@@ -1,0 +1,19 @@
+{
+  "name": "tracker",
+  "version": "1.0.0",
+  "description": "a vue js app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OKiMaureen/tracker.git"
+  },
+  "author": "maureen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OKiMaureen/tracker/issues"
+  },
+  "homepage": "https://github.com/OKiMaureen/tracker#readme"
+}
