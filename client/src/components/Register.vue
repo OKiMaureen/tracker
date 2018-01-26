@@ -17,6 +17,7 @@ export default {
   data () {
     return { email: '', password: '' }
   },
+  // call register endpoint on node server
   methods: {
     async register () {
       const response = await authenticationService.register({email: this.email, password: this.password})
