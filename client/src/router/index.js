@@ -5,6 +5,7 @@ import Register from '@/components/Register'
 Vue.use(Router)
 
 export default new Router({
+  // route to register path
   routes: [
     {
       path: '/register',
