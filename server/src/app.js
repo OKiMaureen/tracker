@@ -1,9 +1,10 @@
-console.log('Hello');
 //requiring modules
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
+const {sequelize} = require ('./models');
+const config = require ('./config/config');
 
 //instantiating express app
 const app = express();
@@ -13,9 +14,14 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 //set up cors
 app.use(cors());
+        
+//requiring routes
+require('./routes')(app)
 
-app.post('/register', (req, res) => {
-    res.send({ message: `Hello ${req.body.email}, Your user was registered!` })
+//connect(synchronize) sequelize to database it is configured for
+sequelize.sync().then(()=>{
+    app.listen(config.port)
+    console.log(`server started at port ${config.PORT}`)
 })
 //listening to server on port 8081
 app.listen(process.env.PORT || 8081);
