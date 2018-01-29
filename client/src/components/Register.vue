@@ -1,16 +1,22 @@
 <template>
-  <div>
-<h1>
-  Register
-</h1>
-<input v-model="email" type="email" name="email" placeholder="Email">
-<br>
-<input v-model="password" type="password" name="password" placeholder="PassWord">
-<br>
-<div class="error" v-html="error"/>
-<br>
-<button @click="register">Register</button>
-</div>
+<v-layout column>
+  <v-flex xs6 offset-xs3>
+    <div class ="white elevation-12">
+      <v-toolbar flat dense class="purple lighten-2" dark>
+        <v-toolbar-title>Register</v-toolbar-title>
+      </v-toolbar>
+      <div class="pl-4 pr-4 pt-2 pb-2">
+      <input v-model="email" type="email" name="email" placeholder="Email">
+      <br>
+      <input v-model="password" type="password" name="password" placeholder="PassWord">
+      <br>
+      <div class="error" v-html="error"/>
+      <br>
+      <v-btn class ="purple lighten-2" @click="register">Register</v-btn>
+      </div>
+    </div>
+  </v-flex>
+</v-layout>
 </template>
 
 <script>
