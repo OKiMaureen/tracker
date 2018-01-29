@@ -14,9 +14,9 @@ module.exports = {
                 break
                 case 'password' : res.status(400).send({error:`
                 password provided failed to match the following rules:
-                <br>
+                <br\>
                 1. it must contain ONLY lowercase ,upper case, numerics
-                <br:
+                <br\>
                 2. it must between 8 and 32 characters in length`})
                 break
                 default:res.status(400).send({error: 'invalid registration information'})
