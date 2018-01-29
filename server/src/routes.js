@@ -1,7 +1,11 @@
-//require authenticationController module
+// require authenticationController module
 const authenticationController = require ('./controllers/authenticationController')
 
-//declaring register route that points to register endpoint controller
-module.exports =(app)=>{
-    app.post('/register',authenticationController.register)
+// require authenticationControllerPolicy module
+const authenticationControllerPolicy = require ('./policies/authenticationControllerPolicy')
+
+
+// declaring register route that points to register endpoint controller after validation
+module.exports = (app)=>{
+    app.post('/register',authenticationControllerPolicy.register, authenticationController.register)
 }
