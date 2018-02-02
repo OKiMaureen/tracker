@@ -11,5 +11,9 @@ db:{
         storage:'./tracker.sqlite'
     }
 
+},
+//signing the jwt token by pssing it a secret string(secret only known by server and used to determine if the jwt token is valid or not)
+authentication: {
+    jwtSecret: process.env.JWT_SECRET || 'secret'
 }
 }
