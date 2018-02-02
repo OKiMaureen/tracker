@@ -5,7 +5,9 @@ const authenticationController = require ('./controllers/authenticationControlle
 const authenticationControllerPolicy = require ('./policies/authenticationControllerPolicy')
 
 
-// declaring register route that points to register endpoint controller after validation
+// declaring register route that points to 'register endpoint' controller after validation
 module.exports = (app)=>{
     app.post('/register',authenticationControllerPolicy.register, authenticationController.register)
-}
+    //login endpoint which calls authentication login method
+    app.post('/login',authenticationController.login)
+    }
