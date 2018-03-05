@@ -15,12 +15,14 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 //set up cors
 app.use(cors());
+
+require('./passport')
         
 //requiring routes
 require('./routes')(app)
 
 //connect(synchronize) sequelize to database it is configured for
-sequelize.sync().then(()=>{
+sequelize.sync({force: false}).then(()=>{
     app.listen(config.port)
     console.log(`server started at port ${config.PORT}`)
 })

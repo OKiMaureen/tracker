@@ -1,4 +1,6 @@
 //configuration file
+const path = require('path')
+
 module.exports = {
 PORT :process.env.PORT || 8081,
 db:{
@@ -8,7 +10,7 @@ db:{
     options:{
         dialect: process.env.DIALECT || 'sqlite',
         host: process.env.HOST || 'localhost',
-        storage:'./tracker.sqlite'
+        storage: path.resolve(__dirname,'../../tracker.sqlite')
     }
 
 },

@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div id="app">
     <v-app>
       <page-header/>
@@ -34,5 +34,8 @@ export default {
   }
   .toolbar__content{
     text-transform: none;
+  }
+  .danger-alert{
+    color:red;
   }
  </style>
